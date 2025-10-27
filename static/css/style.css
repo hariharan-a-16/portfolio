@@ -324,6 +324,72 @@ main {
     max-width: 100%;
     text-align: center;
 }
+/* ===== INTRO SECTION RESPONSIVE DESIGN ===== */
+
+/* Tablet view */
+@media screen and (max-width: 992px) {
+  main {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .intro-text {
+    padding-top: 90px;
+    max-width: 90%;
+  }
+
+  .profile-pic-wrapper {
+ 
+    width: 380px;
+    height: 320px;
+    margin-bottom: 90px;
+  }
+}
+
+/* Mobile view */
+@media screen and (max-width: 768px) {
+  .intro-text h1 {
+    font-size: 2.2rem;
+  }
+
+  .intro-text h2 {
+    font-size: 1.6rem;
+  }
+
+  .contact-btn {
+    padding: 10px 30px;
+    font-size: 1rem;
+  }
+
+  .profile-pic-wrapper {
+    width: 260px;
+    height: 260px;
+    margin-top: 30px;
+  }
+}
+
+/* Extra small phones */
+@media screen and (max-width: 480px) {
+  .intro-text {
+    padding-top: 15%;
+  }
+
+  .intro-text h1 {
+    font-size: 1.8rem;
+  }
+
+  .intro-text h2 {
+    font-size: 1.3rem;
+  }
+
+  .profile-pic-wrapper {
+    width: 200px;
+    height: 200px;
+  }
+}
+ 
+/*  CSS for About */
 
 #about {
     img {
@@ -332,6 +398,60 @@ main {
         height: auto;
     }
 }
+/* ========== Responsive Design for About Section ========== */
+
+/* 📱 Tablet screens (width ≤ 992px) */
+@media screen and (max-width: 992px) {
+  #about {
+    flex-direction: column;       /* Stack image and text vertically */
+    align-items: center;
+    text-align: center;
+    padding: 60px 20px;
+  }
+
+  #about .about-content {
+    max-width: 100%;
+    margin-bottom: 30px;
+  }
+
+  #about .about-content h1 {
+    font-size: 2rem;
+  }
+
+  #about .about-content p {
+    font-size: 1rem;
+    line-height: 1.6;
+  }
+
+  #about .about-image img {
+    width: 220px;
+    height: 220px;
+  }
+}
+
+/* 📱 Mobile screens (width ≤ 600px) */
+@media screen and (max-width: 600px) {
+  #about {
+    flex-direction: column;
+    padding: 40px 15px;
+    text-align: center;
+  }
+
+  #about .about-content h1 {
+    font-size: 1.6rem;
+  }
+
+  #about .about-content p {
+    font-size: 0.9rem;
+  }
+
+  #about .about-image img {
+    width: 160px;
+    height: 160px;
+  }
+}
+
+
 
 .tit {
     padding-bottom: 30px;
