@@ -775,16 +775,30 @@ button:hover {
   gap: 15px;
   margin-top: 20px;
   font-size: 1.3rem;
+  a {
+ color: black;
+  
+}
+
 }
 
 .social-icons i {
   cursor: pointer;
   transition: color 0.3s;
+  
 }
+ 
 
-.social-icons i:hover {
+
+.git:hover {
   color: #555;
 }
+.lkdin:hover {
+color:blue;
+}
+
+
+
 
 /* Responsive Design */
 @media (max-width: 900px) {
