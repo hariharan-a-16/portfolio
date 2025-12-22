@@ -713,7 +713,7 @@ main {
   color: #111111;
   display: flex;
   justify-content: space-between;
-  gap: 30px;
+  gap: 50px;
 }
 
 form {
