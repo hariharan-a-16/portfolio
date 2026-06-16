@@ -8,10 +8,10 @@ document.addEventListener("DOMContentLoaded", () => {
     /* ==========================================================================
        1. Dynamic Rendering
        ========================================================================== */
-       
+
     // --- Render Navigation ---
     const navContainer = document.getElementById("dynamic-nav");
-    if(navContainer) {
+    if (navContainer) {
         navContainer.innerHTML = portfolioData.footer.quickLinks.map(link => `
             <li class="nav-item">
                 <a href="${link.url}" class="nav-link">${link.label}</a>
@@ -21,7 +21,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // --- Render Hero ---
     const heroContainer = document.getElementById("dynamic-hero");
-    if(heroContainer) {
+    if (heroContainer) {
         heroContainer.innerHTML = `
             <div class="hero-content">
                 <span class="hero-greeting reveal">Hello, I'm</span>
@@ -41,17 +41,17 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // --- Render About ---
     const aboutContainer = document.getElementById("dynamic-about");
-    if(aboutContainer) {
+    if (aboutContainer) {
         const detailsHtml = portfolioData.about.details.map(d => `
             <div class="detail-item">
                 <span class="label">${d.label}</span>
                 <span class="value">${d.value}</span>
             </div>
         `).join('');
-        
+
         aboutContainer.innerHTML = `
             <div class="about-image reveal">
-                <img src="${portfolioData.about.aboutImage}" alt="About Image">
+                <img src="${portfolioData.about.aboutImage}" alt="About Image" loading="lazy">
             </div>
             <div class="about-text reveal">
                 <h3>Professional Summary</h3>
@@ -67,7 +67,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // --- Render Skills ---
     const skillsContainer = document.getElementById("dynamic-skills");
-    if(skillsContainer) {
+    if (skillsContainer) {
         skillsContainer.innerHTML = `
             <div class="skills-tabs reveal">
                 <button class="tab-btn active" data-target="frontend">Frontend</button>
@@ -90,7 +90,7 @@ document.addEventListener("DOMContentLoaded", () => {
                     <span>${skill.name}</span>
                 </div>
             `).join('');
-            
+
             // Add slight animation
             const items = skillsGrid.querySelectorAll('.skill-item');
             items.forEach((item, index) => {
@@ -122,7 +122,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // --- Render Experience ---
     const expContainer = document.getElementById("dynamic-experience");
-    if(expContainer) {
+    if (expContainer) {
         expContainer.innerHTML = `
             <div class="experience-timeline">
                 ${portfolioData.experience.map(exp => `
@@ -146,17 +146,17 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // --- Render Projects ---
     const projectsContainer = document.getElementById("dynamic-projects");
-    if(projectsContainer) {
+    if (projectsContainer) {
         projectsContainer.innerHTML = portfolioData.projects.map(proj => `
             <div class="project-card reveal">
-                <img src="${proj.image}" alt="${proj.title}" class="project-img">
+                <img src="${proj.image}" alt="${proj.title}" class="project-img" loading="lazy">
                 <div class="project-info">
                     <span class="project-type">${proj.type}</span>
                     <h3 class="project-title">${proj.title}</h3>
                     <p class="project-desc">${proj.description}</p>
                     <div class="project-links">
-                        <a href="${proj.liveUrl}" target="_blank" title="Live Demo"><i class="fa-solid fa-globe"></i></a>
-                        <a href="${proj.githubUrl}" target="_blank" title="GitHub Repo"><i class="fa-brands fa-github"></i></a>
+                        <a href="${proj.liveUrl}" target="_blank" title="Live Demo" aria-label="View Live Demo"><i class="fa-solid fa-globe"></i></a>
+                        <a href="${proj.githubUrl}" target="_blank" title="GitHub Repo" aria-label="View GitHub Repository"><i class="fa-brands fa-github"></i></a>
                     </div>
                 </div>
             </div>
@@ -165,7 +165,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // --- Render Services ---
     const servicesContainer = document.getElementById("dynamic-services");
-    if(servicesContainer) {
+    if (servicesContainer) {
         servicesContainer.innerHTML = portfolioData.services.map(service => `
             <div class="service-card glass-card reveal">
                 <div class="service-icon">
@@ -179,7 +179,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // --- Render Achievements ---
     const achievementsContainer = document.getElementById("dynamic-achievements");
-    if(achievementsContainer) {
+    if (achievementsContainer) {
         achievementsContainer.innerHTML = portfolioData.achievements.map(ach => `
             <div class="achievement-card glass-card reveal">
                 <div class="achievement-icon">
@@ -195,7 +195,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // --- Render Contact ---
     const contactContainer = document.getElementById("dynamic-contact");
-    if(contactContainer) {
+    if (contactContainer) {
         const infoHtml = portfolioData.contact.details.map(det => `
             <div class="contact-info-item">
                 <div class="contact-icon"><i class="${det.iconClass}"></i></div>
@@ -205,9 +205,9 @@ document.addEventListener("DOMContentLoaded", () => {
                 </div>
             </div>
         `).join('');
-        
+
         const socialsHtml = portfolioData.contact.socials.map(soc => `
-            <a href="${soc.url}" target="_blank"><i class="${soc.iconClass}"></i></a>
+            <a href="${soc.url}" target="_blank" aria-label="Social Profile"><i class="${soc.iconClass}"></i></a>
         `).join('');
 
         contactContainer.innerHTML = `
@@ -238,7 +238,7 @@ document.addEventListener("DOMContentLoaded", () => {
         `;
 
         // Form Submit Handler
-        document.getElementById("contactForm").addEventListener("submit", async function(e) {
+        document.getElementById("contactForm").addEventListener("submit", async function (e) {
             e.preventDefault();
             let form = e.target;
             let status = document.getElementById("status");
@@ -267,7 +267,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // --- Render Footer ---
     const footerContainer = document.getElementById("dynamic-footer");
-    if(footerContainer) {
+    if (footerContainer) {
         footerContainer.innerHTML = `
             <div class="footer-container container">
                 <a href="#home" class="footer-logo">Port<span>folio.</span></a>
@@ -295,7 +295,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
         function type() {
             const currentRole = roles[roleIndex];
-            
+
             if (isDeleting) {
                 typingElement.textContent = currentRole.substring(0, charIndex - 1);
                 charIndex--;
@@ -317,7 +317,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
             setTimeout(type, typeSpeed);
         }
-        
+
         // Start typing effect slightly after load
         setTimeout(type, 1000);
     }
@@ -330,7 +330,7 @@ document.addEventListener("DOMContentLoaded", () => {
         const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
         const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
         const scrolled = (winScroll / height) * 100;
-        if(scrollProgress) scrollProgress.style.width = scrolled + "%";
+        if (scrollProgress) scrollProgress.style.width = scrolled + "%";
     });
 
     // --- Scroll Reveal ---
@@ -362,9 +362,9 @@ document.addEventListener("DOMContentLoaded", () => {
         }
 
         // Back to top button
-        if(window.scrollY >= 500 && backToTopBtn) {
+        if (window.scrollY >= 500 && backToTopBtn) {
             backToTopBtn.classList.add('show');
-        } else if(backToTopBtn) {
+        } else if (backToTopBtn) {
             backToTopBtn.classList.remove('show');
         }
 
@@ -389,13 +389,13 @@ document.addEventListener("DOMContentLoaded", () => {
     // --- Mobile Menu Toggle ---
     const navToggle = document.getElementById('nav-toggle');
     const navMenu = document.getElementById('nav-menu');
-    
+
     if (navToggle && navMenu) {
         navToggle.addEventListener('click', () => {
             navMenu.classList.toggle('show-menu');
             // Change icon
             const icon = navToggle.querySelector('i');
-            if(navMenu.classList.contains('show-menu')){
+            if (navMenu.classList.contains('show-menu')) {
                 icon.classList.remove('fa-bars');
                 icon.classList.add('fa-xmark');
             } else {
@@ -417,19 +417,19 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // --- Particle Background (Vanilla JS implementation) ---
     const particlesContainer = document.getElementById("particles-container");
-    if(particlesContainer) {
+    if (particlesContainer) {
         const numParticles = 50;
         for (let i = 0; i < numParticles; i++) {
             const particle = document.createElement("div");
             particle.classList.add("particle");
-            
+
             // Random properties
             const size = Math.random() * 5 + 2;
             const x = Math.random() * 100;
             const y = Math.random() * 100;
             const duration = Math.random() * 20 + 10;
             const delay = Math.random() * 5;
-            
+
             particle.style.cssText = `
                 position: absolute;
                 width: ${size}px;
@@ -441,7 +441,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 animation: float ${duration}s ease-in-out ${delay}s infinite alternate;
                 pointer-events: none;
             `;
-            
+
             particlesContainer.appendChild(particle);
         }
 
