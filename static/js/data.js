@@ -85,18 +85,18 @@ const portfolioData = {
             type: "Personal Project",
             description: "Monsoon Recipe Hub is a website that shares tasty seasonal recipes. It is built using HTML, CSS, and JavaScript.",
             responsibilities: [],
-            image: "static/image/for ppt.jpeg",
+            image: "static/image/monsoon receipe.jpg",
             liveUrl: "https://hariharan-a-16.github.io/Recipe/",
             githubUrl: "https://github.com/hariharan-a-16/Recipe"
         },
-        {
+{
             title: "Whatsapp Ui",
             type: "Personal Project",
             description: "Built a fully responsive WhatsApp-style chat UI using React and JavaScript, featuring sidebar, chat list, message window, and interactive messaging components.",
             responsibilities: [],
             image: "static/image/image.png",
             liveUrl: "https://whatsappui-8i3m.vercel.app/",
-            githubUrl: "#"
+            githubUrl: "https://github.com/hariharan-a-16/whatsappui"
         }
     ],
     services: [

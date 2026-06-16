@@ -156,7 +156,7 @@ document.addEventListener("DOMContentLoaded", () => {
                     <p class="project-desc">${proj.description}</p>
                     <div class="project-links">
                         <a href="${proj.liveUrl}" target="_blank" title="Live Demo" aria-label="View Live Demo"><i class="fa-solid fa-globe"></i></a>
-                        <a href="${proj.githubUrl}" target="_blank" title="GitHub Repo" aria-label="View GitHub Repository"><i class="fa-brands fa-github"></i></a>
+                        ${proj.githubUrl && proj.githubUrl !== "#" ? `<a href="${proj.githubUrl}" target="_blank" title="GitHub Repo" aria-label="View GitHub Repository"><i class="fa-brands fa-github"></i></a>` : ''}
                     </div>
                 </div>
             </div>
